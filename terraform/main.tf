@@ -38,13 +38,13 @@ module "detection" {
 
 module "siem" {
   source = "./modules/siem"
-
   project_name              = var.project_name
   environment               = var.environment
   cloudtrail_log_group_name = module.detection.cloudtrail_log_group_name
   cloudtrail_log_group_arn  = module.detection.cloudtrail_log_group_arn
   flow_logs_log_group_name  = module.threat_surface_vpc.flow_logs_log_group_name
   flow_logs_log_group_arn   = module.threat_surface_vpc.flow_logs_log_group_arn
+  my_ip                     = var.my_ip
 }
 
 module "remediation" {

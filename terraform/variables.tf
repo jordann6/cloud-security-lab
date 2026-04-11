@@ -17,3 +17,8 @@ variable "notification_email" {
   description = "Email address for security alert notifications"
   type        = string
 }
+
+variable "my_ip" {
+  description = "Public IP address allowed to access OpenSearch Dashboards"
+  type        = string
+}

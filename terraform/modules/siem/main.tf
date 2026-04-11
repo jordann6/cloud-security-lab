@@ -30,16 +30,32 @@ resource "aws_opensearch_domain" "this" {
     tls_security_policy = "Policy-Min-TLS-1-2-2019-07"
   }
 
-  access_policies = jsonencode({
-  Version = "2012-10-17"
-  Statement = [
+access_policies = jsonencode({
+  "Version" : "2012-10-17",
+  "Statement" : [
     {
-      Effect = "Allow"
-      Principal = {
-        AWS = "arn:aws:iam::${data.aws_caller_identity.current.account_id}:root"
+      "Effect" : "Allow",
+      "Principal" : {
+        "AWS" : [
+          "arn:aws:iam::${data.aws_caller_identity.current.account_id}:root",
+          "arn:aws:iam::${data.aws_caller_identity.current.account_id}:user/terraform-user"
+        ]
+      },
+      "Action" : "es:*",
+      "Resource" : "arn:aws:es:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:domain/${var.project_name}-siem/*"
+    },
+    {
+      "Effect" : "Allow",
+      "Principal" : {
+        "AWS" : "*"
+      },
+      "Action" : "es:*",
+      "Resource" : "arn:aws:es:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:domain/${var.project_name}-siem/*",
+      "Condition" : {
+        "IpAddress" : {
+         "aws:SourceIp" : "${var.my_ip}/32"
+        }
       }
-      Action   = "es:*"
-      Resource = "arn:aws:es:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:domain/${var.project_name}-siem/*"
     }
   ]
 })

@@ -27,3 +27,8 @@ variable "flow_logs_log_group_arn" {
   description = "CloudWatch Log Group ARN for VPC Flow Logs"
   type        = string
 }
+
+variable "my_ip" {
+  description = "Public IP address allowed to access OpenSearch Dashboards"
+  type        = string
+}
