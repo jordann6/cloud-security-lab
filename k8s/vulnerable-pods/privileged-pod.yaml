@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: vulnerable-app
+  namespace: default
+  labels:
+    app: vulnerable-app
+    scenario: runtime-attacks
+spec:
+  containers:
+    - name: vulnerable-app
+      image: ubuntu:22.04
+      command: ["sleep", "infinity"]
+      securityContext:
+        privileged: true
+      volumeMounts:
+        - name: host-fs
+          mountPath: /host
+  volumes:
+    - name: host-fs
+      hostPath:
+        path: /
+        type: Directory

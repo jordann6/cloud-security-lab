@@ -1,13 +1,14 @@
 falco:
   grpc:
     enabled: true
-  grpcOutput:
+  grpc_output:
     enabled: true
 
-  rules:
-    - macro: container
-      condition: container.id != host
+driver:
+  kind: modern_ebpf
 
+customRules:
+  custom-rules.yaml: |-
     - rule: Terminal Shell in Container
       desc: Detect a shell opened in a container
       condition: >
@@ -63,13 +64,9 @@ falco:
       priority: WARNING
       tags: [container, filesystem, mitre_credential_access]
 
-  falcosidekick:
-    enabled: true
-    config:
-      webhook:
-        address: ""
-        minimumpriority: warning
-      slack:
-        webhookurl: ""
-        minimumpriority: warning
-        outputformat: all
+falcosidekick:
+  enabled: true
+  config:
+    webhook:
+      address: ""
+      minimumpriority: warning
