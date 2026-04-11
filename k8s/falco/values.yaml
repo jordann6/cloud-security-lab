@@ -1,0 +1,75 @@
+falco:
+  grpc:
+    enabled: true
+  grpcOutput:
+    enabled: true
+
+  rules:
+    - macro: container
+      condition: container.id != host
+
+    - rule: Terminal Shell in Container
+      desc: Detect a shell opened in a container
+      condition: >
+        spawned_process and container and
+        proc.name in (bash, sh, zsh, dash)
+      output: >
+        Shell opened in container
+        (user=%user.name container=%container.name
+        shell=%proc.name parent=%proc.pname
+        cmdline=%proc.cmdline image=%container.image.repository)
+      priority: WARNING
+      tags: [container, shell, mitre_execution]
+
+    - rule: Container Escape via Mount
+      desc: Detect attempts to mount sensitive host paths
+      condition: >
+        spawned_process and container and
+        proc.name = mount and
+        (proc.args contains "/etc" or
+         proc.args contains "/var/run" or
+         proc.args contains "/proc")
+      output: >
+        Container escape attempt via mount
+        (user=%user.name container=%container.name
+        command=%proc.cmdline image=%container.image.repository)
+      priority: CRITICAL
+      tags: [container, escape, mitre_privilege_escalation]
+
+    - rule: Unauthorized Process in Container
+      desc: Detect unexpected process execution in container
+      condition: >
+        spawned_process and container and
+        not proc.name in (pause, tini, node, python, java, nginx)
+      output: >
+        Unauthorized process in container
+        (user=%user.name container=%container.name
+        process=%proc.name parent=%proc.pname
+        cmdline=%proc.cmdline image=%container.image.repository)
+      priority: NOTICE
+      tags: [container, process, mitre_execution]
+
+    - rule: Read Sensitive File in Container
+      desc: Detect reading of sensitive files inside containers
+      condition: >
+        open_read and container and
+        (fd.name startswith /etc/shadow or
+         fd.name startswith /etc/passwd or
+         fd.name startswith /run/secrets)
+      output: >
+        Sensitive file read in container
+        (user=%user.name container=%container.name
+        file=%fd.name image=%container.image.repository)
+      priority: WARNING
+      tags: [container, filesystem, mitre_credential_access]
+
+  falcosidekick:
+    enabled: true
+    config:
+      webhook:
+        address: ""
+        minimumpriority: warning
+      slack:
+        webhookurl: ""
+        minimumpriority: warning
+        outputformat: all
