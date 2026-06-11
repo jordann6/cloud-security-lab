@@ -1,5 +1,7 @@
 # Cloud Security Lab
 
+[![CI](https://github.com/jordann6/cloud-security-lab/actions/workflows/security-scan.yml/badge.svg)](https://github.com/jordann6/cloud-security-lab/actions/workflows/security-scan.yml)
+
 End to end threat detection, incident response, and automated remediation across AWS and Kubernetes. This project mirrors a production security operations workflow, covering the full attack and defense lifecycle using real tooling, MITRE ATT&CK mapped kill chains, and measurable detection and response outcomes.
 
 ![Architecture Diagram](docs/architecture-diagram.svg)
