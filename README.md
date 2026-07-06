@@ -88,12 +88,12 @@ Because the threat-surface modules are vulnerable on purpose, the pipeline gates
 | Job                          | Scope                                              | Blocking |
 | ---------------------------- | -------------------------------------------------- | -------- |
 | gitleaks                     | Whole repo (fake lab PII allowlisted)              | Yes      |
-| Checkov (defensive)          | detection, remediation, siem modules               | Yes      |
+| Checkov (defensive)          | detection, remediation, siem modules (baselined)   | Yes (blocks new findings) |
 | Checkov (threat surface)     | Intentionally-vulnerable modules                   | No (informational) |
 | gator                        | Gatekeeper admission policies vs. test pods        | Yes      |
 | Trivy IaC                    | All Terraform                                       | No (informational) |
 
-This mirrors how a real security team runs guardrails against a codebase that deliberately contains weak configurations: real regressions in the defensive controls fail the build, while the known-vulnerable surface is reported without blocking.
+This mirrors how a real security team runs guardrails against a codebase that deliberately contains weak configurations. The defensive modules are held to a Checkov baseline (`terraform/modules/.checkov.baseline`) that records the accepted lab-scope findings, so the gate blocks any new misconfiguration introduced beyond that baseline while the known-vulnerable surface is reported without blocking.
 
 ## MITRE ATT&CK Coverage
 

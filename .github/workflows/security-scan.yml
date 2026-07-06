@@ -40,6 +40,10 @@ jobs:
           # Only the defensive modules must be clean; the vulnerable surface is
           # skipped here and covered informationally in the job below.
           skip_path: terraform/modules/threat-surface-vpc,terraform/modules/threat-surface-ec2,terraform/modules/threat-surface-s3,terraform/modules/threat-surface-iam
+          # Baseline captures the accepted lab-scope findings (no KMS CMKs, no
+          # Lambda-in-VPC, etc.). The gate blocks only NEW misconfigurations
+          # introduced beyond that baseline, which is how a real team ratchets.
+          baseline: terraform/modules/.checkov.baseline
           framework: terraform
           quiet: true
           soft_fail: false

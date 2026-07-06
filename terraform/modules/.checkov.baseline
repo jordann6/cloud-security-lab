@@ -1,0 +1,238 @@
+{
+    "failed_checks": [
+        {
+            "file": "/detection/main.tf",
+            "findings": [
+                {
+                    "resource": "aws_cloudtrail.this",
+                    "check_ids": [
+                        "CKV_AWS_252",
+                        "CKV_AWS_35",
+                        "CKV_AWS_67"
+                    ]
+                },
+                {
+                    "resource": "aws_cloudwatch_log_group.cloudtrail",
+                    "check_ids": [
+                        "CKV_AWS_158",
+                        "CKV_AWS_338"
+                    ]
+                },
+                {
+                    "resource": "aws_guardduty_detector.this",
+                    "check_ids": [
+                        "CKV2_AWS_3"
+                    ]
+                },
+                {
+                    "resource": "aws_s3_bucket.cloudtrail",
+                    "check_ids": [
+                        "CKV2_AWS_6",
+                        "CKV2_AWS_61",
+                        "CKV2_AWS_62",
+                        "CKV_AWS_144",
+                        "CKV_AWS_145",
+                        "CKV_AWS_18",
+                        "CKV_AWS_21"
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "/remediation/main.tf",
+            "findings": [
+                {
+                    "resource": "aws_iam_role_policy.remediation",
+                    "check_ids": [
+                        "CKV_AWS_286",
+                        "CKV_AWS_287",
+                        "CKV_AWS_289",
+                        "CKV_AWS_290",
+                        "CKV_AWS_355"
+                    ]
+                },
+                {
+                    "resource": "aws_lambda_function.disable_iam_keys",
+                    "check_ids": [
+                        "CKV_AWS_115",
+                        "CKV_AWS_116",
+                        "CKV_AWS_117",
+                        "CKV_AWS_173",
+                        "CKV_AWS_272",
+                        "CKV_AWS_50"
+                    ]
+                },
+                {
+                    "resource": "aws_lambda_function.isolate_instance",
+                    "check_ids": [
+                        "CKV_AWS_115",
+                        "CKV_AWS_116",
+                        "CKV_AWS_117",
+                        "CKV_AWS_173",
+                        "CKV_AWS_272",
+                        "CKV_AWS_50"
+                    ]
+                },
+                {
+                    "resource": "aws_lambda_function.lockdown_s3",
+                    "check_ids": [
+                        "CKV_AWS_115",
+                        "CKV_AWS_116",
+                        "CKV_AWS_117",
+                        "CKV_AWS_173",
+                        "CKV_AWS_272",
+                        "CKV_AWS_50"
+                    ]
+                },
+                {
+                    "resource": "aws_sns_topic.alerts",
+                    "check_ids": [
+                        "CKV_AWS_26"
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "/siem/main.tf",
+            "findings": [
+                {
+                    "resource": "aws_opensearch_domain.this",
+                    "check_ids": [
+                        "CKV2_AWS_52",
+                        "CKV2_AWS_59",
+                        "CKV_AWS_137",
+                        "CKV_AWS_247",
+                        "CKV_AWS_248",
+                        "CKV_AWS_317",
+                        "CKV_AWS_318",
+                        "CKV_AWS_84"
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "/threat-surface-ec2/main.tf",
+            "findings": [
+                {
+                    "resource": "aws_instance.this",
+                    "check_ids": [
+                        "CKV2_AWS_41",
+                        "CKV_AWS_126",
+                        "CKV_AWS_135",
+                        "CKV_AWS_79",
+                        "CKV_AWS_8",
+                        "CKV_AWS_88"
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "/threat-surface-iam/main.tf",
+            "findings": [
+                {
+                    "resource": "aws_iam_role_policy.pivot",
+                    "check_ids": [
+                        "CKV_AWS_286",
+                        "CKV_AWS_287",
+                        "CKV_AWS_288",
+                        "CKV_AWS_289",
+                        "CKV_AWS_290",
+                        "CKV_AWS_355"
+                    ]
+                },
+                {
+                    "resource": "aws_iam_user.compromised",
+                    "check_ids": [
+                        "CKV_AWS_273"
+                    ]
+                },
+                {
+                    "resource": "aws_iam_user_policy.compromised",
+                    "check_ids": [
+                        "CKV2_AWS_40",
+                        "CKV_AWS_286",
+                        "CKV_AWS_287",
+                        "CKV_AWS_288",
+                        "CKV_AWS_289",
+                        "CKV_AWS_290",
+                        "CKV_AWS_355"
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "/threat-surface-s3/main.tf",
+            "findings": [
+                {
+                    "resource": "aws_s3_bucket.this",
+                    "check_ids": [
+                        "CKV2_AWS_6",
+                        "CKV2_AWS_61",
+                        "CKV2_AWS_62",
+                        "CKV_AWS_144",
+                        "CKV_AWS_145",
+                        "CKV_AWS_18",
+                        "CKV_AWS_21"
+                    ]
+                },
+                {
+                    "resource": "aws_s3_bucket_policy.this",
+                    "check_ids": [
+                        "CKV_AWS_70"
+                    ]
+                },
+                {
+                    "resource": "aws_s3_bucket_public_access_block.this",
+                    "check_ids": [
+                        "CKV_AWS_53",
+                        "CKV_AWS_54",
+                        "CKV_AWS_55",
+                        "CKV_AWS_56"
+                    ]
+                }
+            ]
+        },
+        {
+            "file": "/threat-surface-vpc/main.tf",
+            "findings": [
+                {
+                    "resource": "aws_cloudwatch_log_group.flow_logs",
+                    "check_ids": [
+                        "CKV_AWS_158",
+                        "CKV_AWS_338"
+                    ]
+                },
+                {
+                    "resource": "aws_iam_role_policy.flow_logs",
+                    "check_ids": [
+                        "CKV_AWS_290",
+                        "CKV_AWS_355"
+                    ]
+                },
+                {
+                    "resource": "aws_security_group.permissive",
+                    "check_ids": [
+                        "CKV2_AWS_5",
+                        "CKV_AWS_24",
+                        "CKV_AWS_25",
+                        "CKV_AWS_260",
+                        "CKV_AWS_277",
+                        "CKV_AWS_382"
+                    ]
+                },
+                {
+                    "resource": "aws_subnet.public",
+                    "check_ids": [
+                        "CKV_AWS_130"
+                    ]
+                },
+                {
+                    "resource": "aws_vpc.this",
+                    "check_ids": [
+                        "CKV2_AWS_12"
+                    ]
+                }
+            ]
+        }
+    ]
+}
