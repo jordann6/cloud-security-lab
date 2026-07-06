@@ -1,33 +1,83 @@
 name: Security Scans
 
+# This repo is a security lab: the threat-surface modules are INTENTIONALLY
+# vulnerable, so scanning them and failing the build would be noise. The gating
+# strategy is therefore split:
+#   - defensive code (detection, remediation, siem, k8s policy) must pass clean
+#   - the intentionally-vulnerable surface is scanned for visibility only
+#   - secrets are always blocking, everywhere
 on:
   push:
     branches: [main]
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+
 jobs:
-  tfsec:
-    name: Terraform Security Scan
+  gitleaks:
+    name: Secret Scan (blocking)
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Run tfsec
-        uses: aquasecurity/tfsec-action@v1.0.3
+      - uses: actions/checkout@v4
         with:
-          working_directory: terraform
+          fetch-depth: 0
+      - name: Run gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITLEAKS_CONFIG: .gitleaks.toml
+
+  checkov-defensive:
+    name: Checkov — Defensive Modules (blocking)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkov on detection, remediation, siem
+        uses: bridgecrewio/checkov-action@master
+        with:
+          directory: terraform/modules
+          # Only the defensive modules must be clean; the vulnerable surface is
+          # skipped here and covered informationally in the job below.
+          skip_path: terraform/modules/threat-surface-vpc,terraform/modules/threat-surface-ec2,terraform/modules/threat-surface-s3,terraform/modules/threat-surface-iam
+          framework: terraform
+          quiet: true
+          soft_fail: false
+
+  checkov-surface:
+    name: Checkov — Threat Surface (informational)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkov on intentionally-vulnerable modules
+        uses: bridgecrewio/checkov-action@master
+        with:
+          directory: terraform/modules
+          framework: terraform
+          quiet: true
+          # Expected to report findings by design — never blocks the build.
           soft_fail: true
 
-  trivy-iac:
-    name: Trivy IaC Scan
+  gator:
+    name: Gatekeeper Policy Tests (blocking)
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+      - name: Install gator
+        run: |
+          GATOR_VERSION=v3.17.1
+          curl -sSL "https://github.com/open-policy-agent/gatekeeper/releases/download/${GATOR_VERSION}/gator-${GATOR_VERSION}-linux-amd64.tar.gz" \
+            | tar -xz gator
+          sudo mv gator /usr/local/bin/
+      - name: Verify admission policies against known-good / known-bad pods
+        run: gator verify k8s/gatekeeper/tests/
 
-      - name: Run Trivy IaC scan
+  trivy-iac:
+    name: Trivy IaC (informational)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Trivy config scan
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: config
@@ -35,19 +85,3 @@ jobs:
           format: table
           exit-code: 0
           severity: CRITICAL,HIGH,MEDIUM
-
-  trivy-image:
-    name: Trivy Container Image Scan
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Run Trivy image scan (Amazon Linux 2023)
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: image
-          image-ref: public.ecr.aws/amazonlinux/amazonlinux:2023
-          format: table
-          exit-code: 0
-          severity: CRITICAL,HIGH

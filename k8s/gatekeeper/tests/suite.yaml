@@ -1,0 +1,44 @@
+# gator test suite for the admission policies. Runs each ConstraintTemplate and
+# its Constraint against known-good and known-bad pods with no cluster required:
+#   gator verify k8s/gatekeeper/tests/
+# This is the detection-as-code check that gates the policies in CI before they
+# are ever applied to a real cluster.
+apiVersion: test.gatekeeper.sh/v1alpha1
+kind: Suite
+tests:
+  - name: deny-privileged
+    template: ../policies/templates/deny-privileged.yaml
+    constraint: ../policies/constraints/deny-privileged.yaml
+    cases:
+      - name: privileged-container-is-denied
+        object: cases/privileged-pod.yaml
+        assertions:
+          - violations: yes
+      - name: compliant-pod-is-allowed
+        object: cases/compliant-pod.yaml
+        assertions:
+          - violations: no
+  - name: deny-host-namespace
+    template: ../policies/templates/deny-host-namespace.yaml
+    constraint: ../policies/constraints/deny-host-namespace.yaml
+    cases:
+      - name: host-network-is-denied
+        object: cases/hostnetwork-pod.yaml
+        assertions:
+          - violations: yes
+      - name: compliant-pod-is-allowed
+        object: cases/compliant-pod.yaml
+        assertions:
+          - violations: no
+  - name: deny-run-as-root
+    template: ../policies/templates/deny-run-as-root.yaml
+    constraint: ../policies/constraints/deny-run-as-root.yaml
+    cases:
+      - name: root-container-is-denied
+        object: cases/root-pod.yaml
+        assertions:
+          - violations: yes
+      - name: nonroot-pod-is-allowed
+        object: cases/compliant-pod.yaml
+        assertions:
+          - violations: no

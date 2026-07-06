@@ -1,0 +1,27 @@
+{
+  "name": "Cloud Security Lab — Kill Chain",
+  "versions": {
+    "attack": "14",
+    "navigator": "4.9.1",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "MITRE ATT&CK techniques exercised by the cloud-security-lab kill chain (attack/) and the runtime attack scenarios (k8s/attack-scenarios/). Import at https://mitre-attack.github.io/attack-navigator/ to view coverage.",
+  "gradient": {
+    "colors": ["#ffe766", "#ff6666"],
+    "minValue": 0,
+    "maxValue": 1
+  },
+  "techniques": [
+    { "techniqueID": "T1078.004", "tactic": "initial-access", "score": 1, "color": "#fd8d3c", "comment": "Valid cloud account: leaked IAM access key (attack/00-setup.sh)" },
+    { "techniqueID": "T1580", "tactic": "discovery", "score": 1, "comment": "Cloud infrastructure discovery via IAM/S3 enumeration (attack/01-enumerate.sh)" },
+    { "techniqueID": "T1087.004", "tactic": "discovery", "score": 1, "comment": "Cloud account discovery: users, roles, pivot candidates" },
+    { "techniqueID": "T1098.003", "tactic": "privilege-escalation", "score": 1, "color": "#e6550d", "comment": "AttachUserPolicy AdministratorAccess to self (attack/02-privesc.sh)" },
+    { "techniqueID": "T1530", "tactic": "exfiltration", "score": 1, "color": "#e6550d", "comment": "Data from cloud storage: S3 PII exfiltration (attack/03-exfil.sh)" },
+    { "techniqueID": "T1550.001", "tactic": "lateral-movement", "score": 1, "comment": "Application access token: sts:AssumeRole into pivot role (attack/04-lateral.sh)" },
+    { "techniqueID": "T1059", "tactic": "execution", "score": 1, "comment": "Terminal shell in container — Falco: Terminal Shell in Container" },
+    { "techniqueID": "T1552.001", "tactic": "credential-access", "score": 1, "comment": "Read /etc/shadow, /etc/passwd — Falco: Read Sensitive File in Container" },
+    { "techniqueID": "T1611", "tactic": "privilege-escalation", "score": 1, "color": "#de2d26", "comment": "Container escape via host mount — Falco: Container Escape via Mount (CRITICAL)" },
+    { "techniqueID": "T1105", "tactic": "command-and-control", "score": 1, "comment": "Ingress tool transfer: drop and execute binary — Falco: Drop and execute new binary" }
+  ]
+}

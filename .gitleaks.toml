@@ -1,0 +1,20 @@
+# gitleaks config for the security lab. Secret scanning stays ON and blocking,
+# but the intentionally-staged lab data (fake PII CSV, attacker loot) is
+# allowlisted so it does not mask a real leak. Terraform-minted access keys are
+# never committed — they live only in state and the gitignored attack/.loot dir.
+title = "cloud-security-lab gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Intentional lab fixtures, not real secrets"
+paths = [
+  '''attack/\.loot/.*''',
+  '''terraform/modules/threat-surface-s3/main.tf''',   # staged fake customer PII
+]
+regexes = [
+  '''123-45-6789''',
+  '''987-65-4321''',
+  '''555-12-3456''',
+]

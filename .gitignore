@@ -4,3 +4,9 @@
 *.zip
 .terraform.lock.hcl
 terraform.tfvars
+
+# Attacker loot: exfiltrated data and leaked credentials from kill-chain runs
+attack/.loot/
+
+# macOS
+.DS_Store

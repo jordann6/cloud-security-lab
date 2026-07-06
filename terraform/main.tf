@@ -31,13 +31,13 @@ module "threat_surface_iam" {
 module "detection" {
   source = "./modules/detection"
 
-  project_name = var.project_name
-  environment  = var.environment
+  project_name  = var.project_name
+  environment   = var.environment
   s3_bucket_arn = module.threat_surface_s3.bucket_arn
 }
 
 module "siem" {
-  source = "./modules/siem"
+  source                    = "./modules/siem"
   project_name              = var.project_name
   environment               = var.environment
   cloudtrail_log_group_name = module.detection.cloudtrail_log_group_name
