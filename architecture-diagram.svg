@@ -1,172 +1,135 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="1400" height="1000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <defs>
-    <!-- Gradient backgrounds -->
-    <linearGradient id="vpcGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#E8F4F8;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#D4E9F0;stop-opacity:1" />
-    </linearGradient>
+<svg width="1440" height="880" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<linearGradient id="awsBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2F6FB"/><stop offset="1" stop-color="#E4ECF5"/></linearGradient>
+<linearGradient id="k8sBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EAF3FB"/><stop offset="1" stop-color="#D9EAF8"/></linearGradient>
+<marker id="mRed" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#D13212"/></marker>
+<marker id="mAmber" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#E68A00"/></marker>
+<marker id="mGreen" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#1D8102"/></marker>
+</defs>
+<rect width="1440" height="880" fill="#FFFFFF"/>
+<text x="720.0" y="42" font-family="Arial, sans-serif" font-size="26" font-weight="bold" text-anchor="middle" fill="#232F3E">Cloud Security Lab &#8212; Attack, Detect &amp; Respond</text>
+<line x1="60" y1="70" x2="100" y2="70" stroke="#D13212" stroke-width="3" marker-end="url(#mRed)"/>
+<text x="108" y="74" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="start" fill="#232F3E">Attack (kill chain)</text>
+<line x1="290" y1="70" x2="330" y2="70" stroke="#E68A00" stroke-width="3" marker-end="url(#mAmber)"/>
+<text x="338" y="74" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="start" fill="#232F3E">Detection</text>
+<line x1="460" y1="70" x2="500" y2="70" stroke="#1D8102" stroke-width="3" marker-end="url(#mGreen)"/>
+<text x="508" y="74" font-family="Arial, sans-serif" font-size="12" font-weight="normal" text-anchor="start" fill="#232F3E">Auto-remediation</text>
+<rect x="40" y="120" width="1000" height="720" rx="12" fill="url(#awsBg)" stroke="#232F3E" stroke-width="2.5"/>
+<text x="60" y="150" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="start" fill="#232F3E">AWS Account</text>
+<text x="120" y="190" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="start" fill="#D13212">1. Kill Chain</text>
+<rect x="70" y="212" width="120" height="78" rx="8" fill="#FBE9E4" stroke="#D13212" stroke-width="2"/>
+<text x="130" y="245" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#D13212">Pacu</text>
+<text x="130" y="263" font-family="Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="middle" fill="#666">leaked IAM</text>
+<text x="130" y="276" font-family="Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="middle" fill="#666">credentials</text>
+<svg x="304.0" y="225.0" width="52" height="52" viewBox="0 0 64 64" overflow="visible">
     
-    <!-- Arrow markers -->
-    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,6 L9,3 z" fill="#D13212" />
-    </marker>
-    <marker id="arrowYellow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,6 L9,3 z" fill="#FF9900" />
-    </marker>
-    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L0,6 L9,3 z" fill="#1D8102" />
-    </marker>
-  </defs>
-  
-  <!-- Background -->
-  <rect width="1400" height="1000" fill="#FFFFFF"/>
-  
-  <!-- Title -->
-  <text x="700" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#232F3E">
-    Cloud Security Lab - Attack &amp; Defense Architecture
-  </text>
-  
-  <!-- Legend -->
-  <g transform="translate(50, 70)">
-    <text x="0" y="0" font-family="Arial" font-size="14" font-weight="bold" fill="#232F3E">Legend:</text>
-    <line x1="0" y1="15" x2="60" y2="15" stroke="#D13212" stroke-width="3" marker-end="url(#arrowRed)"/>
-    <text x="70" y="20" font-family="Arial" font-size="12" fill="#232F3E">Attack Flow</text>
+    <g id="i1-Icon-Architecture/48/Arch_Amazon-EC2_48" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="i1-Icon-Architecture-BG/48/Compute" fill="#ED7100">
+            <rect id="i1-Rectangle" x="0" y="0" width="64" height="64"></rect>
+        </g>
+        <path d="M22,41 L41,41 L41,23 L22,23 L22,41 Z M43,23 L46,23 L46,25 L43,25 L43,27 L46,27 L46,29 L43,29 L43,31 L46,31 L46,33 L43,33 L43,36 L46,36 L46,38 L43,38 L43,40 L46,40 L46,42 L42.863,42 C42.608,42.587 42.023,43 41.344,43 L41,43 L41,46 L39,46 L39,43 L37,43 L37,46 L35,46 L35,43 L33,43 L33,46 L31,46 L31,43 L29,43 L29,46 L27,46 L27,43 L24,43 L24,46 L22,46 L22,43 L21.656,43 C20.977,43 20.392,42.587 20.137,42 L18,42 L18,40 L20,40 L20,38 L18,38 L18,36 L20,36 L20,33 L18,33 L18,31 L20,31 L20,29 L18,29 L18,27 L20,27 L20,25 L18,25 L18,23 L20,23 L20,22.656 C20,21.743 20.743,21 21.656,21 L22,21 L22,18 L24,18 L24,21 L27,21 L27,18 L29,18 L29,21 L31,21 L31,18 L33,18 L33,21 L35,21 L35,18 L37,18 L37,21 L39,21 L39,18 L41,18 L41,21 L41.344,21 C42.257,21 43,21.743 43,22.656 L43,23 Z M32,52 L12,52 L12,32 L16,32 L16,30 L11.843,30 C10.826,30 10,30.827 10,31.843 L10,52.157 C10,53.173 10.826,54 11.843,54 L32.157,54 C33.174,54 34,53.173 34,52.157 L34,48 L32,48 L32,52 Z M54,11.843 L54,32.157 C54,33.173 53.174,34 52.157,34 L48,34 L48,32 L52,32 L52,12 L32,12 L32,16 L30,16 L30,11.843 C30,10.827 30.826,10 31.843,10 L52.157,10 C53.174,10 54,10.827 54,11.843 L54,11.843 Z" id="i1-Amazon-EC2_Icon_48_Squid" fill="#FFFFFF"></path>
+    </g>
+</svg>
+<text x="330" y="292" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#232F3E">EC2 attacker</text>
+<svg x="534.0" y="225.0" width="52" height="52" viewBox="0 0 64 64" overflow="visible">
     
-    <line x1="0" y1="35" x2="60" y2="35" stroke="#FF9900" stroke-width="3" marker-end="url(#arrowYellow)"/>
-    <text x="70" y="40" font-family="Arial" font-size="12" fill="#232F3E">Detection Flow</text>
+    <g id="i2-Icon-Architecture/48/Arch_Amazon-Simple-Storage-Service_48" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="i2-Icon-Architecture-BG/48/Storage" fill="#7AA116">
+            <rect id="i2-Rectangle" x="0" y="0" width="64" height="64"></rect>
+        </g>
+        <g id="i2-Icon-Service/48/Amazon-Simple-Storage-Service_48" transform="translate(10.999800, 10.000200)" fill="#FFFFFF">
+            <path d="M36.759,23.948 L36.993,22.131 C39.166,23.385 39.842,24.121 40.037,24.424 C39.713,24.485 38.832,24.509 36.759,23.948 L36.759,23.948 Z M19.5,11 C9.125,11 2.382,8.488 2,6.696 L2,6.511 C2.349,5.392 8.14,2 19.5,2 C30.84,2 36.632,5.381 37,6.505 L37,6.616 C36.724,8.446 29.961,11 19.5,11 L19.5,11 Z M34.818,23.362 C30.053,21.797 23.912,18.979 21.594,17.888 C21.535,16.786 20.628,15.906 19.512,15.906 C18.358,15.906 17.418,16.845 17.418,18 C17.418,19.154 18.358,20.094 19.512,20.094 C19.969,20.094 20.389,19.942 20.733,19.693 C23.132,20.822 29.619,23.798 34.558,25.38 L32.837,38.724 C32.583,40.352 27.919,42 19.497,42 C11.072,42 6.405,40.352 6.155,38.751 L2.435,9.814 C5.945,11.915 12.749,13 19.5,13 C26.25,13 33.054,11.915 36.565,9.815 L34.818,23.362 Z M39,6.5 C39,3.431 30.661,0 19.5,0 C8.339,0 -3.55271368e-15,3.431 -3.55271368e-15,6.5 L-3.55271368e-15,7.043 L4.174,39.033 C4.875,43.516 15.123,44 19.497,44 C23.869,44 34.113,43.516 34.818,39.007 L36.501,25.947 C37.778,26.279 38.812,26.456 39.616,26.455 C40.606,26.455 41.273,26.203 41.697,25.697 C42.047,25.281 42.185,24.756 42.085,24.221 C41.857,23 40.403,21.712 37.37,20.044 L37.27,19.989 L39,7.044 L39,6.5 Z" id="i2-Amazon-Simple-Storage-Service-Icon_48_Squid"></path>
+        </g>
+    </g>
+</svg>
+<text x="560" y="292" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#232F3E">S3 (PII target)</text>
+<text x="445" y="232" font-family="Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="middle" fill="#666">privesc 1k&#8594;15k perms</text>
+<text x="120" y="400" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="start" fill="#E68A00">2. Detect</text>
+<rect x="70" y="422" width="120" height="70" rx="8" fill="#FFFFFF" stroke="#879196" stroke-width="1.5"/>
+<text x="130" y="450" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#232F3E">CloudTrail</text>
+<text x="130" y="468" font-family="Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="middle" fill="#666">+ VPC Flow</text>
+<text x="130" y="480" font-family="Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="middle" fill="#666">Logs</text>
+<svg x="304.0" y="431.0" width="52" height="52" viewBox="0 0 64 64" overflow="visible">
     
-    <line x1="0" y1="55" x2="60" y2="55" stroke="#1D8102" stroke-width="3" marker-end="url(#arrowGreen)"/>
-    <text x="70" y="60" font-family="Arial" font-size="12" fill="#232F3E">Remediation Flow</text>
-  </g>
-  
-  <!-- VPC Container -->
-  <rect x="100" y="150" width="1200" height="750" rx="10" fill="url(#vpcGradient)" stroke="#3B48CC" stroke-width="3"/>
-  <text x="120" y="180" font-family="Arial" font-size="18" font-weight="bold" fill="#3B48CC">VPC (10.0.0.0/16)</text>
-  
-  <!-- Public Subnets -->
-  <rect x="150" y="220" width="1100" height="620" rx="5" fill="#E6F2E6" stroke="#1D8102" stroke-width="2" stroke-dasharray="5,5"/>
-  <text x="170" y="250" font-family="Arial" font-size="14" font-weight="bold" fill="#1D8102">Public Subnets (Multi-AZ)</text>
-  
-  <!-- EC2 Attacker Instance -->
-  <g transform="translate(300, 320)">
-    <rect x="-60" y="-40" width="120" height="100" rx="5" fill="#FF6B6B" stroke="#D13212" stroke-width="2"/>
-    <rect x="-50" y="-30" width="100" height="20" fill="#FFFFFF" rx="3"/>
-    <rect x="-50" y="-5" width="100" height="8" fill="#E0E0E0" rx="2"/>
-    <rect x="-50" y="8" width="100" height="8" fill="#E0E0E0" rx="2"/>
-    <rect x="-50" y="21" width="100" height="8" fill="#E0E0E0" rx="2"/>
-    <text x="0" y="70" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#232F3E">EC2 Attacker</text>
-    <text x="0" y="85" font-family="Arial" font-size="10" text-anchor="middle" fill="#666">(Stratus Red Team)</text>
-  </g>
-  
-  <!-- EKS Cluster -->
-  <g transform="translate(900, 350)">
-    <rect x="-130" y="-60" width="260" height="200" rx="8" fill="#FFE6CC" stroke="#FF9900" stroke-width="3"/>
-    <text x="0" y="-35" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#232F3E">EKS Cluster</text>
+    <g id="i3-Icon-Architecture/48/Arch_Amazon-GuardDuty_48" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="i3-Icon-Architecture-BG/48/Security-Identity-Compliance" fill="#DD344C">
+            <rect id="i3-Rectangle" x="0" y="0" width="64" height="64"></rect>
+        </g>
+        <path d="M36,34.3505534 C35.967,36.2315962 35.389,38.4306462 33,38.9036569 L33,25.8303598 L36,27.0763881 L36,34.3505534 Z M28,34.3395532 L28,27.0763881 L31,25.8303598 L31,38.8926567 C28.242,38.3076434 28,35.3245756 28,34.3395532 L28,34.3395532 Z M31.616,23.4083047 L26.616,25.4853519 C26.243,25.6403555 26,26.0043637 26,26.4083729 L26,34.3395532 C26,37.412623 27.571,41.0007046 32,41.0007046 C35.685,41.0007046 37.927,38.5276484 38,34.3685538 L38,26.4083729 C38,26.0043637 37.757,25.6403555 37.384,25.4853519 L32.384,23.4083047 C32.138,23.3063024 31.862,23.3063024 31.616,23.4083047 L31.616,23.4083047 Z M40,34.3685538 C40,34.7205618 39.909,43.00075 32,43.00075 C24.124,43.00075 24.001,34.6915612 24,34.3395532 L24,24.4063274 L32,21.0832519 L40,24.4063274 L40,34.3685538 Z M41.384,22.8152913 L32.384,19.0772063 C32.138,18.974204 31.862,18.974204 31.616,19.0772063 L22.616,22.8152913 C22.243,22.9702948 22,23.3343031 22,23.7383122 L22,34.3395532 C22,38.027637 24.09,45.0007955 32,45.0007955 C39.91,45.0007955 42,38.0456374 42,34.3685538 L42,23.7383122 C42,23.3343031 41.757,22.9702948 41.384,22.8152913 L41.384,22.8152913 Z M52,35.1155708 L49.572,34.9765676 C49.102,34.948567 48.647,35.2775745 48.54,35.7555854 C48.117,37.630628 47.381,39.4096684 46.352,41.0427055 C46.091,41.4557149 46.167,41.9967272 46.531,42.3227346 L48.345,43.9397714 L43.939,48.3458715 L42.327,46.5378304 C42,46.1708221 41.458,46.0968204 41.047,46.3578263 C39.416,47.3878497 37.636,48.1258665 35.754,48.5508762 C35.277,48.6588786 34.948,49.0958885 34.977,49.5838996 L35.115,51.9999545 L28.885,51.9999545 L29.023,49.5808996 C29.052,49.0938885 28.723,48.6568786 28.246,48.5488761 C26.37,48.1248665 24.59,47.3868497 22.956,46.3548262 C22.543,46.0928203 22.001,46.166822 21.676,46.5348303 L20.061,48.3458715 L15.655,43.9397714 L17.465,42.3267347 C17.83,42.0007273 17.906,41.458715 17.646,41.0457056 C16.617,39.4166686 15.881,37.6366281 15.457,35.7555854 C15.349,35.2775745 14.877,34.948567 14.425,34.9765676 L12,35.1155708 L12,28.8854292 L14.432,29.0234324 C14.877,29.0394327 15.355,28.7234255 15.464,28.2464147 C15.888,26.3733721 16.626,24.5973318 17.656,22.9662947 C17.917,22.5522853 17.841,22.011273 17.477,21.6852656 L15.655,20.0602286 L20.061,15.6551285 L21.685,17.4751699 C22.009,17.8401782 22.553,17.9141799 22.964,17.655174 C24.594,16.6281506 26.37,15.8921339 28.246,15.4691243 C28.723,15.3611218 29.052,14.9251119 29.023,14.4361008 L28.885,12.0000455 L35.115,12.0000455 L34.977,14.4381009 C34.948,14.927112 35.277,15.3631219 35.754,15.4711243 C37.628,15.895134 39.404,16.6311507 41.033,17.6591741 C41.444,17.91918 41.987,17.8431783 42.312,17.47917 L43.939,15.6551285 L48.345,20.0602286 L46.526,21.6822655 C46.162,22.0072729 46.086,22.5492852 46.347,22.9622946 C47.377,24.5923316 48.114,26.3703721 48.538,28.2464147 C48.645,28.7234255 49.102,29.0394327 49.57,29.0234324 L52,28.8854292 L52,35.1155708 Z M53.687,27.0993886 C53.487,26.9113843 53.212,26.8113821 52.943,26.8283825 L50.283,26.9793859 C49.866,25.4563513 49.261,23.9973181 48.477,22.6232869 L50.467,20.8482466 C50.672,20.6652424 50.793,20.4062365 50.801,20.1302302 C50.809,19.855224 50.702,19.5892179 50.508,19.3952135 L44.605,13.4930794 C44.411,13.298075 44.145,13.1850724 43.87,13.2000727 C43.595,13.2080729 43.336,13.3290757 43.152,13.5340803 L41.371,15.5301257 C39.999,14.7471079 38.541,14.1430942 37.021,13.7260847 L37.172,11.057024 C37.187,10.7820178 37.09,10.5130117 36.9,10.3130071 C36.712,10.1130026 36.449,10 36.174,10 L27.826,10 C27.551,10 27.288,10.1130026 27.1,10.3130071 C26.91,10.5130117 26.812,10.7820178 26.828,11.057024 L26.979,13.7240846 C25.458,14.1400941 23.999,14.7441078 22.626,15.5261256 L20.848,13.5340803 C20.664,13.3290757 20.405,13.2080729 20.13,13.2000727 C19.861,13.1870724 19.589,13.298075 19.395,13.4930794 L13.492,19.3952135 C13.298,19.5892179 13.191,19.855224 13.199,20.1302302 C13.207,20.4052365 13.328,20.6652424 13.533,20.8482466 L15.527,22.626287 C14.742,24.0003182 14.137,25.4583513 13.72,26.9793859 L11.057,26.8283825 C10.785,26.8103821 10.513,26.9113843 10.313,27.0993886 C10.113,27.2883929 10,27.5513989 10,27.8264051 L10,36.1735949 C10,36.4486011 10.113,36.7116071 10.313,36.9006114 C10.513,37.0896157 10.786,37.1876179 11.057,37.1726176 L13.712,37.0206141 C14.128,38.5476488 14.733,40.009682 15.517,41.3847133 L13.534,43.1517534 C13.328,43.3347576 13.207,43.5947635 13.199,43.8697698 C13.191,44.144776 13.298,44.4117821 13.492,44.6057865 L19.395,50.5079206 C19.589,50.7029251 19.858,50.8219278 20.13,50.8009273 C20.405,50.7929271 20.665,50.6719244 20.848,50.4669197 L22.617,48.4838746 C23.994,49.2698925 25.455,49.8759063 26.979,50.2939158 L26.828,52.942976 C26.812,53.2179822 26.91,53.4869883 27.099,53.6869929 C27.288,53.8869974 27.551,54 27.826,54 L36.174,54 C36.449,54 36.712,53.8869974 36.901,53.6869929 C37.09,53.4869883 37.187,53.2179822 37.172,52.942976 L37.021,50.2959158 C38.548,49.8779063 40.011,49.2718925 41.386,48.4868747 L43.152,50.4669197 C43.335,50.6719244 43.595,50.7929271 43.87,50.8009273 C44.147,50.8239278 44.411,50.7029251 44.605,50.5079206 L50.508,44.6057865 C50.702,44.4117821 50.809,44.144776 50.801,43.8707698 C50.793,43.5947635 50.672,43.3357576 50.467,43.1527535 L48.48,41.3807132 C49.265,40.0046819 49.869,38.5436487 50.285,37.0206141 L52.943,37.1726176 C53.211,37.1866179 53.487,37.0896157 53.687,36.9006114 C53.887,36.7116071 54,36.4486011 54,36.1735949 L54,27.8264051 C54,27.5513989 53.887,27.2883929 53.687,27.0993886 L53.687,27.0993886 Z" id="i3-Amazon-GuardDuty_Icon_48_Squid" fill="#FFFFFF"></path>
+    </g>
+</svg>
+<text x="330" y="498" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#232F3E">GuardDuty</text>
+<svg x="534.0" y="431.0" width="52" height="52" viewBox="0 0 64 64" overflow="visible">
     
-    <!-- Falco Pod -->
-    <rect x="-110" y="-10" width="100" height="70" rx="5" fill="#FFFFFF" stroke="#3B48CC" stroke-width="2"/>
-    <circle cx="-60" cy="10" r="8" fill="#3B48CC"/>
-    <text x="-60" y="35" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#232F3E">Falco</text>
-    <text x="-60" y="48" font-family="Arial" font-size="9" text-anchor="middle" fill="#666">(Runtime)</text>
+    <g id="i4-Icon-Architecture/48/Arch_Amazon-CloudWatch_48" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="i4-Icon-Architecture-BG/48/Management-Governance" fill="#E7157B">
+            <rect id="i4-Rectangle" x="0" y="0" width="64" height="64"></rect>
+        </g>
+        <path d="M42.184,39.3811216 C42.184,37.1282698 40.347,35.2954581 38.089,35.2954581 C35.831,35.2954581 33.995,37.1282698 33.995,39.3811216 C33.995,41.6339735 35.831,43.4667852 38.089,43.4667852 C40.347,43.4667852 42.184,41.6339735 42.184,39.3811216 L42.184,39.3811216 Z M44.184,39.3811216 C44.184,42.7344587 41.45,45.4622252 38.089,45.4622252 C34.729,45.4622252 31.995,42.7344587 31.995,39.3811216 C31.995,36.0277846 34.729,33.3000181 38.089,33.3000181 C41.45,33.3000181 44.184,36.0277846 44.184,39.3811216 L44.184,39.3811216 Z M50.743,49.6157337 L45.846,45.2157884 C45.524,45.6398194 45.17,46.0379097 44.785,46.4050706 L49.671,50.8030205 C49.997,51.0953525 50.505,51.0714072 50.802,50.744155 C51.096,50.4179006 51.07,49.9110588 50.743,49.6157337 L50.743,49.6157337 Z M38.089,47.091502 C42.351,47.091502 45.818,43.6324067 45.818,39.3811216 C45.818,35.1298366 42.351,31.6707413 38.089,31.6707413 C33.829,31.6707413 30.362,35.1298366 30.362,39.3811216 C30.362,43.6324067 33.829,47.091502 38.089,47.091502 L38.089,47.091502 Z M52.081,48.1341194 C53.227,49.1667597 53.319,50.9357173 52.288,52.0801021 C51.735,52.6897091 50.971,53 50.205,53 C49.538,53 48.868,52.7655358 48.333,52.2866302 L43.172,47.6412457 C41.691,48.5521641 39.954,49.0869421 38.089,49.0869421 C32.725,49.0869421 28.362,44.7328919 28.362,39.3811216 C28.362,34.0293514 32.725,29.6753012 38.089,29.6753012 C43.454,29.6753012 47.818,34.0293514 47.818,39.3811216 C47.818,40.8447769 47.482,42.2286146 46.897,43.4757646 L52.081,48.1341194 Z M17.697,23.5383254 C17.697,23.9394088 17.72,24.3384968 17.767,24.722619 C17.802,25.0059715 17.713,25.2913194 17.524,25.5048315 C17.375,25.6714508 17.177,25.7831954 16.961,25.8241019 C15.084,26.3079961 12,27.7716514 12,32.1566309 C12,35.4800363 13.836,37.3138458 15.377,38.2676661 C16.049,38.6897017 16.64,38.9052092 17.138,38.9101978 L26.127,38.9101978 L26.127,40.9056378 L17.127,40.9056378 C16.243,40.8966584 15.3,40.577388 14.317,39.9588015 C12.708,38.9640747 10,36.6214281 10,32.1566309 C10,26.8876715 13.526,24.8642953 15.71,24.117003 C15.702,23.924443 15.697,23.7308853 15.697,23.5383254 C15.697,19.1603299 18.673,14.6217015 22.621,12.9784566 C27.232,11.0508615 32.119,12.0066773 35.687,15.5336176 C36.734,16.5672555 37.604,17.8084192 38.285,19.2361566 C39.203,18.5507229 40.304,18.1745825 41.459,18.1745825 C43.874,18.1745825 46.587,19.9684831 47.122,23.8895228 C50.58,24.7216213 54,27.27778 54,32.2174919 C54,35.1078868 52.864,37.4565197 50.713,39.0089721 L49.541,37.3926656 C51.173,36.2143583 52,34.4733368 52,32.2174919 C52,27.2388689 47.811,25.9997007 46.01,25.6983892 C45.743,25.6534918 45.505,25.5018384 45.351,25.2793468 C45.208,25.071821 45.15,24.8184001 45.186,24.5709656 C44.931,21.5319104 43.141,20.1700225 41.459,20.1700225 C40.402,20.1700225 39.409,20.6858438 38.734,21.5857873 C38.514,21.8791169 38.156,22.0297727 37.786,21.9748981 C37.422,21.9210212 37.118,21.6715912 36.993,21.3263801 C36.359,19.5743837 35.446,18.1027466 34.281,16.9513777 C32.851,15.5396039 28.933,12.506535 23.391,14.81925 C20.198,16.1492108 17.697,19.9784603 17.697,23.5383254 L17.697,23.5383254 Z" id="i4-Amazon-CloudWatch_Icon_48_Squid" fill="#FFFFFF"></path>
+    </g>
+</svg>
+<text x="560" y="498" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#232F3E">CloudWatch</text>
+<svg x="764.0" y="431.0" width="52" height="52" viewBox="0 0 64 64" overflow="visible">
     
-    <!-- OPA Pod -->
-    <rect x="10" y="-10" width="100" height="70" rx="5" fill="#FFFFFF" stroke="#3B48CC" stroke-width="2"/>
-    <circle cx="60" cy="10" r="8" fill="#3B48CC"/>
-    <text x="60" y="35" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#232F3E">OPA</text>
-    <text x="60" y="48" font-family="Arial" font-size="9" text-anchor="middle" fill="#666">(Admission)</text>
+    <g id="i5-Icon-Architecture/48/Arch_Amazon-OpenSearch-Service_48" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="i5-Icon-Architecture-BG/48/Analytics" fill="#8C4FFF">
+            <rect id="i5-Rectangle" x="0" y="0" width="64" height="64"></rect>
+        </g>
+        <path d="M35,41 C32.243,41 30,38.757 30,36 C30,33.243 32.243,31 35,31 C37.757,31 40,33.243 40,36 C40,38.757 37.757,41 35,41 L35,41 Z M35,29 C31.141,29 28,32.14 28,36 C28,39.86 31.141,43 35,43 C38.859,43 42,39.86 42,36 C42,32.14 38.859,29 35,29 L35,29 Z M49.71,48.919 C49.291,49.384 48.569,49.42 48.106,49.004 L42.543,43.985 C43.093,43.466 43.591,42.894 44.024,42.271 L49.625,47.316 C50.089,47.736 50.127,48.457 49.71,48.919 L49.71,48.919 Z M26,36 C26,31.038 30.037,27 35,27 C39.963,27 44,31.038 44,36 C44,40.962 39.963,45 35,45 C30.037,45 26,40.962 26,36 L26,36 Z M45.033,40.488 C45.649,39.116 46,37.6 46,36 C46,29.935 41.065,25 35,25 C28.935,25 24,29.935 24,36 C24,42.065 28.935,47 35,47 C37.191,47 39.23,46.349 40.947,45.24 L46.769,50.491 C47.366,51.027 48.116,51.292 48.863,51.292 C49.722,51.292 50.577,50.943 51.196,50.259 C52.349,48.975 52.246,46.99 50.965,45.832 L45.033,40.488 Z M53,17 L53,43 L51,43 L51,18 L46,18 L46,26 L44,26 L44,17 C44,16.448 44.447,16 45,16 L52,16 C52.553,16 53,16.448 53,17 L53,17 Z M40,50 L42,50 L42,53 C42,53.552 41.553,54 41,54 L34,54 C33.447,54 33,53.552 33,53 L33,49 L35,49 L35,52 L40,52 L40,50 Z M35,22 L33,22 L33,12 C33,11.448 33.447,11 34,11 L41,11 C41.553,11 42,11.448 42,12 L42,23 L40,23 L40,13 L35,13 L35,22 Z M29,48 L31,48 L31,53 C31,53.552 30.553,54 30,54 L23,54 C22.447,54 22,53.552 22,53 L22,43 L24,43 L24,52 L29,52 L29,48 Z M24,28 L22,28 L22,19 C22,18.448 22.447,18 23,18 L30,18 C30.553,18 31,18.448 31,19 L31,23 L29,23 L29,20 L24,20 L24,28 Z M13,52 L18,52 L18,26 L13,26 L13,52 Z M19,24 L12,24 C11.447,24 11,24.448 11,25 L11,53 C11,53.552 11.447,54 12,54 L19,54 C19.553,54 20,53.552 20,53 L20,25 C20,24.448 19.553,24 19,24 L19,24 Z" id="i5-Amazon-OpenSearch-Service_Icon_48_Squid" fill="#FFFFFF"></path>
+    </g>
+</svg>
+<text x="790" y="498" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#232F3E">OpenSearch SIEM</text>
+<text x="120" y="610" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="start" fill="#1D8102">3. Respond</text>
+<svg x="304.0" y="639.0" width="52" height="52" viewBox="0 0 64 64" overflow="visible">
     
-    <!-- Workload Pods -->
-    <rect x="-110" y="75" width="220" height="45" rx="5" fill="#E8F4F8" stroke="#87CEEB" stroke-width="1" stroke-dasharray="3,3"/>
-    <text x="0" y="102" font-family="Arial" font-size="10" text-anchor="middle" fill="#666">Application Pods</text>
-  </g>
-  
-  <!-- S3 Bucket (Target) -->
-  <g transform="translate(900, 650)">
-    <path d="M -50,-30 L 50,-30 L 50,10 Q 50,20 40,25 L -40,25 Q -50,20 -50,10 Z" fill="#569A31" stroke="#3F7021" stroke-width="2"/>
-    <ellipse cx="0" cy="-30" rx="50" ry="10" fill="#7AB954" stroke="#3F7021" stroke-width="2"/>
-    <text x="0" y="50" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#232F3E">S3 Bucket</text>
-    <text x="0" y="65" font-family="Arial" font-size="10" text-anchor="middle" fill="#666">(Attack Target)</text>
-  </g>
-  
-  <!-- OpenSearch Domain -->
-  <g transform="translate(300, 650)">
-    <rect x="-70" y="-35" width="140" height="80" rx="5" fill="#4A90E2" stroke="#3B48CC" stroke-width="2"/>
-    <circle cx="-30" cy="-5" r="12" fill="#FFFFFF"/>
-    <circle cx="0" cy="-5" r="12" fill="#FFFFFF"/>
-    <circle cx="30" cy="-5" r="12" fill="#FFFFFF"/>
-    <path d="M -40,15 L 40,15" stroke="#FFFFFF" stroke-width="2"/>
-    <path d="M -40,25 L 40,25" stroke="#FFFFFF" stroke-width="2"/>
-    <text x="0" y="65" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle" fill="#232F3E">OpenSearch</text>
-    <text x="0" y="80" font-family="Arial" font-size="10" text-anchor="middle" fill="#666">(SIEM)</text>
-  </g>
-  
-  <!-- CloudWatch Logs -->
-  <g transform="translate(1100, 650)">
-    <rect x="-60" y="-30" width="120" height="70" rx="5" fill="#FF9900" stroke="#E67300" stroke-width="2"/>
-    <path d="M -30,-5 L -30,15 M -10,-5 L -10,15 M 10,-5 L 10,15 M 30,-5 L 30,15" stroke="#FFFFFF" stroke-width="3"/>
-    <path d="M -35,0 Q -30,-10 -20,0 T 0,0 T 20,0 T 35,0" stroke="#FFFFFF" stroke-width="2" fill="none"/>
-    <text x="0" y="60" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#232F3E">CloudWatch</text>
-    <text x="0" y="73" font-family="Arial" font-size="9" text-anchor="middle" fill="#666">Logs</text>
-  </g>
-  
-  <!-- Lambda Function -->
-  <g transform="translate(500, 780)">
-    <path d="M -40,-25 L -25,-40 L 25,-40 L 40,-25 L 40,25 L 25,40 L -25,40 L -40,25 Z" fill="#FF9900" stroke="#E67300" stroke-width="2"/>
-    <text x="0" y="5" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#FFFFFF">λ</text>
-    <text x="0" y="60" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#232F3E">Lambda</text>
-    <text x="0" y="73" font-family="Arial" font-size="9" text-anchor="middle" fill="#666">Remediation</text>
-  </g>
-  
-  <!-- SNS Topic -->
-  <g transform="translate(700, 780)">
-    <rect x="-50" y="-30" width="100" height="60" rx="5" fill="#E94B3C" stroke="#C62F20" stroke-width="2"/>
-    <circle cx="0" cy="0" r="15" fill="#FFFFFF"/>
-    <path d="M -8,-8 L 8,8 M 8,-8 L -8,8" stroke="#E94B3C" stroke-width="3"/>
-    <text x="0" y="50" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#232F3E">SNS Topic</text>
-    <text x="0" y="63" font-family="Arial" font-size="9" text-anchor="middle" fill="#666">Alerts</text>
-  </g>
-  
-  <!-- Internet Gateway -->
-  <g transform="translate(300, 140)">
-    <rect x="-40" y="-15" width="80" height="30" rx="3" fill="#3B48CC" stroke="#232F3E" stroke-width="2"/>
-    <circle cx="-15" cy="0" r="5" fill="#FFFFFF"/>
-    <circle cx="0" cy="0" r="5" fill="#FFFFFF"/>
-    <circle cx="15" cy="0" r="5" fill="#FFFFFF"/>
-    <text x="0" y="30" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="#232F3E">IGW</text>
-  </g>
-  
-  <!-- Attack Flow Arrows (Red) -->
-  <path d="M 300,240 L 300,280" stroke="#D13212" stroke-width="3" fill="none" marker-end="url(#arrowRed)"/>
-  <path d="M 360,350 L 700,350 L 700,600 L 850,620" stroke="#D13212" stroke-width="3" fill="none" marker-end="url(#arrowRed)" stroke-dasharray="10,5"/>
-  
-  <!-- Detection Flow Arrows (Yellow) -->
-  <path d="M 840,400 L 700,400 L 700,550 L 370,600" stroke="#FF9900" stroke-width="3" fill="none" marker-end="url(#arrowYellow)"/>
-  <path d="M 900,450 L 900,550 L 1100,600" stroke="#FF9900" stroke-width="3" fill="none" marker-end="url(#arrowYellow)"/>
-  
-  <!-- Remediation Flow Arrows (Green) -->
-  <path d="M 300,700 L 300,740 L 460,760" stroke="#1D8102" stroke-width="3" fill="none" marker-end="url(#arrowGreen)"/>
-  <path d="M 540,770 L 650,770" stroke="#1D8102" stroke-width="3" fill="none" marker-end="url(#arrowGreen)"/>
-  <path d="M 500,740 L 500,550 L 800,400" stroke="#1D8102" stroke-width="3" fill="none" marker-end="url(#arrowGreen)"/>
-  
-  <!-- Labels for key flows -->
-  <g transform="translate(550, 330)">
-    <rect x="-60" y="-12" width="120" height="24" rx="3" fill="#FFFFFF" stroke="#D13212" stroke-width="1"/>
-    <text x="0" y="5" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="#D13212">1. Privilege Esc</text>
-  </g>
-  
-  <g transform="translate(550, 570)">
-    <rect x="-70" y="-12" width="140" height="24" rx="3" fill="#FFFFFF" stroke="#FF9900" stroke-width="1"/>
-    <text x="0" y="5" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="#FF9900">2. Falco Detection</text>
-  </g>
-  
-  <g transform="translate(620, 720)">
-    <rect x="-75" y="-12" width="150" height="24" rx="3" fill="#FFFFFF" stroke="#1D8102" stroke-width="1"/>
-    <text x="0" y="5" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="#1D8102">3. Auto Remediation</text>
-  </g>
-  
-  <!-- Bottom annotations -->
-  <text x="700" y="950" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">
-    Built with Terraform | Attack: Stratus Red Team | Defense: Falco + OPA + Lambda
-  </text>
+    <g id="i6-Icon-Architecture/48/Arch_Amazon-EventBridge_48" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="i6-Icon-Architecture-BG/48/Application-Integration" fill="#E7157B">
+            <rect id="i6-Rectangle" x="0" y="0" width="64" height="64"></rect>
+        </g>
+        <path d="M43.2617752,52 C41.6961147,52 40.4226302,50.736 40.4226302,49.182 C40.4226302,47.628 41.6961147,46.364 43.2617752,46.364 C44.8274357,46.364 46.1009202,47.628 46.1009202,49.182 C46.1009202,50.736 44.8274357,52 43.2617752,52 L43.2617752,52 Z M36.5437415,39 L28.4000902,39 L24.3277608,32 L28.4000902,25 L36.5437415,25 L40.6160709,32 L36.5437415,39 Z M22.7459802,17.636 C21.1803197,17.636 19.9058277,16.372 19.9058277,14.818 C19.9058277,13.264 21.1803197,12 22.7459802,12 C24.3106333,12 25.5851253,13.264 25.5851253,14.818 C25.5851253,16.372 24.3106333,17.636 22.7459802,17.636 L22.7459802,17.636 Z M43.2617752,44.364 C42.7197383,44.364 42.206919,44.473 41.7192872,44.636 L38.6161763,39.438 L42.6522355,32.5 C42.8315712,32.19 42.8315712,31.81 42.6522355,31.5 L37.9975691,23.5 C37.8182335,23.19 37.4857573,23 37.125071,23 L28.8010766,23 L26.0243968,18.349 C26.9865627,17.468 27.6001324,16.217 27.6001324,14.818 C27.6001324,12.162 25.4229172,10 22.7459802,10 C20.0680358,10 17.8908206,12.162 17.8908206,14.818 C17.8908206,17.475 20.0680358,19.636 22.7459802,19.636 C23.2880172,19.636 23.8008365,19.527 24.2884682,19.364 L26.8535722,23.659 L22.2926036,31.5 C22.1122605,31.81 22.1122605,32.19 22.2926036,32.5 L26.9462626,40.5 C27.1255982,40.81 27.4580744,41 27.8187607,41 L37.125071,41 C37.1512661,41 37.1754462,40.992 37.1996263,40.99 L39.9833586,45.651 C39.0211927,46.532 38.4076231,47.783 38.4076231,49.182 C38.4076231,51.838 40.5848382,54 43.2617752,54 C45.9387122,54 48.1159273,51.838 48.1159273,49.182 C48.1159273,46.525 45.9387122,44.364 43.2617752,44.364 L43.2617752,44.364 Z M47.9335692,25.636 C46.3679087,25.636 45.0934167,24.372 45.0934167,22.818 C45.0934167,21.264 46.3679087,20 47.9335692,20 C49.4982222,20 50.7727142,21.264 50.7727142,22.818 C50.7727142,24.372 49.4982222,25.636 47.9335692,25.636 L47.9335692,25.636 Z M50.9792525,26.539 C52.0734013,25.655 52.7877213,24.325 52.7877213,22.818 C52.7877213,20.162 50.6105062,18 47.9335692,18 C47.2958194,18 46.6903098,18.13 46.1331603,18.353 L43.4048407,14.432 C43.21543,14.162 42.9051189,14 42.5746578,14 L33.5071257,14 L33.5071257,16 L42.0467259,16 L44.4576819,19.466 C43.6083564,20.334 43.0784096,21.515 43.0784096,22.818 C43.0784096,25.475 45.2556247,27.636 47.9335692,27.636 C48.3678032,27.636 48.7818872,27.561 49.1838811,27.454 L51.8295855,32 L47.9809219,38.616 L49.725918,39.616 L53.8647426,32.5 C54.0450858,32.19 54.0450858,31.81 53.8647426,31.5 L50.9792525,26.539 Z M17.7084624,43.636 C16.1428019,43.636 14.8683099,42.372 14.8683099,40.818 C14.8683099,39.264 16.1428019,38 17.7084624,38 C19.2731155,38 20.5476075,39.264 20.5476075,40.818 C20.5476075,42.372 19.2731155,43.636 17.7084624,43.636 L17.7084624,43.636 Z M20.6221627,44.647 C21.7928819,43.767 22.5626146,42.386 22.5626146,40.818 C22.5626146,38.162 20.3853994,36 17.7084624,36 C17.00724,36 16.3443026,36.155 15.742823,36.421 L13.1706664,32 L17.6429747,24.311 L15.8979785,23.311 L11.1345017,31.5 C10.9551661,31.81 10.9551661,32.19 11.1345017,32.5 L14.1086522,37.614 C13.337912,38.468 12.8533028,39.583 12.8533028,40.818 C12.8533028,43.475 15.030518,45.636 17.7084624,45.636 C18.0762012,45.636 18.4308425,45.588 18.7744012,45.511 L21.5954112,49.568 C21.7838143,49.838 22.0931179,50 22.4245866,50 L31.4921186,50 L31.4921186,48 L22.9545335,48 L20.6221627,44.647 Z" id="i6-AWS-EventBridge_Icon_48_Squid" fill="#FFFFFF"></path>
+    </g>
+</svg>
+<text x="330" y="706" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#232F3E">EventBridge</text>
+<svg x="534.0" y="639.0" width="52" height="52" viewBox="0 0 64 64" overflow="visible">
+    
+    <g id="i7-Icon-Architecture/48/Arch_AWS-Lambda_48" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="i7-Icon-Architecture-BG/48/Compute" fill="#ED7100">
+            <rect id="i7-Rectangle" x="0" y="0" width="64" height="64"></rect>
+        </g>
+        <path d="M22.6794094,52 L13.5740701,52 L23.8376189,30.41 L28.3997494,39.861 L22.6794094,52 Z M24.7269406,27.667 C24.5606285,27.321 24.2120702,27.103 23.8306478,27.103 L23.8276601,27.103 C23.4452418,27.104 23.0966835,27.325 22.9323632,27.672 L11.0973143,52.569 C10.9499239,52.879 10.9708374,53.243 11.1540795,53.534 C11.3353298,53.824 11.6540117,54 11.9955989,54 L23.309802,54 C23.695208,54 24.0447622,53.777 24.2100784,53.428 L30.4044577,40.284 C30.5329264,40.01 30.5319305,39.692 30.3994783,39.42 L24.7269406,27.667 Z M51.0082382,52 L41.985557,52 L26.9547262,19.578 C26.7914017,19.226 26.4388599,19 26.0524581,19 L20.1279625,19 L20.1349337,12 L31.8146251,12 L46.7747483,44.42 C46.9380728,44.774 47.2906147,45 47.6790082,45 L51.0082382,45 L51.0082382,52 Z M52.0041191,43 L48.3143803,43 L33.354257,10.58 C33.1909326,10.226 32.8383907,10 32.450993,10 L19.1400486,10 C18.5913182,10 18.1451636,10.447 18.1441677,10.999 L18.1362006,19.999 C18.1362006,20.265 18.2407681,20.519 18.4269979,20.707 C18.6142235,20.895 18.8671772,21 19.1310857,21 L25.4170861,21 L40.4479168,53.422 C40.6112413,53.774 40.9627873,54 41.350185,54 L52.0041191,54 C52.5548412,54 53,53.552 53,53 L53,44 C53,43.448 52.5548412,43 52.0041191,43 L52.0041191,43 Z" id="i7-AWS-Lambda_Icon_48_Squid" fill="#FFFFFF"></path>
+    </g>
+</svg>
+<text x="560" y="706" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#232F3E">Lambda</text>
+<svg x="764.0" y="639.0" width="52" height="52" viewBox="0 0 64 64" overflow="visible">
+    
+    <g id="i8-Icon-Architecture/48/Arch_Amazon-Simple-Notification-Service_48" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="i8-Icon-Architecture-BG/48/Application-Integration" fill="#E7157B">
+            <rect id="i8-Rectangle" x="0" y="0" width="64" height="64"></rect>
+        </g>
+        <path d="M14,31 C14.552,31 15,31.449 15,32 C15,32.551 14.552,33 14,33 C13.448,33 13,32.551 13,32 C13,31.449 13.448,31 14,31 L14,31 Z M33.396,51 C24.508,51 16.822,44.081 15.152,34.768 C15.93,34.443 16.531,33.797 16.815,33 L22,33 L22,31 L16.815,31 C16.532,30.204 15.932,29.558 15.155,29.232 C16.776,20.49 24.451,14 33.396,14 C37.587,14 40.588,14.844 43.429,16.821 L44.571,15.179 C41.411,12.98 37.965,12 33.396,12 C23.394,12 14.826,19.322 13.141,29.14 C11.907,29.512 11,30.646 11,32 C11,33.353 11.906,34.486 13.139,34.859 C14.88,45.248 23.456,53 33.396,53 C37.628,53 41.729,51.591 45.585,48.811 L44.415,47.189 C40.907,49.718 37.199,51 33.396,51 L33.396,51 Z M25.062,29.459 C26.457,29.837 28.091,30 29.434,30 C30.716,30 32.26,29.855 33.618,29.526 L30.105,36.553 C30.036,36.691 30,36.845 30,37 L30,40.501 C29.875,40.602 29.741,40.714 29.601,40.832 C29.207,41.162 28.432,41.813 28,41.974 L28,37 C28,36.873 27.976,36.747 27.929,36.628 L25.062,29.459 Z M29.434,26 C32.033,26 34.015,26.566 34.769,27 C34.015,27.434 32.033,28 29.434,28 C26.739,28 24.901,27.399 24.218,27 C24.901,26.601 26.739,26 29.434,26 L29.434,26 Z M27,44 L28,44 C28.043,44 28.086,43.997 28.128,43.992 C29.094,43.867 30.046,43.068 30.886,42.364 C31.145,42.147 31.372,41.952 31.546,41.838 C31.829,41.653 32,41.338 32,41 L32,37.236 L36.592,28.053 C36.85,27.745 37,27.396 37,27 C37,24.799 32.475,24 29.434,24 C26.445,24 22,24.799 22,27 C22,27.317 22.101,27.601 22.268,27.862 L26,37.192 L26,43 C26,43.552 26.447,44 27,44 L27,44 Z M49,43 C49.552,43 50,43.449 50,44 C50,44.551 49.552,45 49,45 C48.448,45 48,44.551 48,44 C48,43.449 48.448,43 49,43 L49,43 Z M49,19 C49.552,19 50,19.449 50,20 C50,20.551 49.552,21 49,21 C48.448,21 48,20.551 48,20 C48,19.449 48.448,19 49,19 L49,19 Z M51,31 C51.552,31 52,31.449 52,32 C52,32.551 51.552,33 51,33 C50.448,33 50,32.551 50,32 C50,31.449 50.448,31 51,31 L51,31 Z M44,33 L48.185,33 C48.599,34.162 49.698,35 51,35 C52.654,35 54,33.654 54,32 C54,30.346 52.654,29 51,29 C49.698,29 48.599,29.838 48.185,31 L44,31 L44,21 L46.185,21 C46.599,22.162 47.698,23 49,23 C50.654,23 52,21.654 52,20 C52,18.346 50.654,17 49,17 C47.698,17 46.599,17.838 46.185,19 L43,19 C42.447,19 42,19.448 42,20 L42,31 L37,31 L37,33 L42,33 L42,44 C42,44.552 42.447,45 43,45 L46.185,45 C46.599,46.162 47.698,47 49,47 C50.654,47 52,45.654 52,44 C52,42.346 50.654,41 49,41 C47.698,41 46.599,41.838 46.185,43 L44,43 L44,33 Z" id="i8-AWS-Simple-Notification-Service_Icon_48_Squid" fill="#FFFFFF"></path>
+    </g>
+</svg>
+<text x="790" y="706" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#232F3E">SNS alerts</text>
+<text x="445" y="730" font-family="Arial, sans-serif" font-size="10" font-weight="normal" text-anchor="middle" fill="#1D8102">disable keys · lock S3 · isolate EC2</text>
+<rect x="1075" y="300" width="325" height="340" rx="12" fill="url(#k8sBg)" stroke="#326CE5" stroke-width="2.5"/>
+<text x="1237" y="336" font-family="Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle" fill="#326CE5">Kubernetes (K3s)</text>
+<svg x="1134.0" y="404.0" width="52" height="52" viewBox="48.91 -1.09 472.18 576.68" overflow="visible"><defs><style>.i9_cls-2{fill:#00b4c8}</style></defs><path fill="none" d="M196.604 498.09a89.682 89.682 0 0 0-13.023.965 40.633 40.633 0 0 0-11.9 3.536 21.616 21.616 0 0 0-8.521 7.237 20.21 20.21 0 0 0-3.215 11.737 31.384 31.384 0 0 0 1.219 9.165 17.022 17.022 0 0 0 7.46 9.96q8.682 5.31 23.477 5.307 18.004 0 27.333-1.93v-43.083a75.905 75.905 0 0 0-9.323-1.93 86.893 86.893 0 0 0-13.507-.965z"/><path d="M449.796 202.845q-59.153 58.926-118.375 117.786L146.075 505.977l-.455-.454c-10.614 10.65-21.158 21.371-31.393 32.377-5.393 5.8-7.384 13.173-1.166 19.87 6.506 7.012 14.346 6.588 21.53 1.266 5.376-3.982 10.062-8.948 14.822-13.705q150.23-150.18 300.194-300.633l60.89-10.613c-9.937-10.087-51.278-40.626-60.7-31.24z" class="i9_cls-2"/><path d="M478.784 292.437a12.923 12.923 0 0 0-9.082-12.55c-9.699-3.506-16.357 2.168-22.599 8.406Q324.865 410.481 202.66 532.702c-7.21 7.214-14.657 15.812-5.816 25.346 9.758 10.524 18.9 2.988 26.64-4.743q123.57-123.452 247.065-246.983c3.915-3.915 7.825-7.863 8.236-13.885zm-162.923-9.911l17.142-17.141c-1.391-4.326-4.908-8.414-8.611-12.12Q206.824 135.632 89.169 18.086c-4.387-4.384-9.075-8.341-15.87-8.073-5.329.275-9.597 2.553-11.62 7.553-3.576 8.834.995 15.298 6.89 21.195q117.585 117.616 235.184 235.215c3.707 3.706 7.796 7.18 12.108 8.55zm154.131 108.506c7.257-7.343 13.7-16.123 3.918-25.36-8.782-8.293-17.17-2.51-24.072 4.354-31.334 31.157-62.48 62.504-93.819 93.655-10.96 10.893-10.454 21.057.401 31.721 18.385 18.067 36.744 36.174 54.585 54.771 10.004 10.428 20.93 16.95 35.042 14.194 3.259.21 5.737.691 8.15.466 10.303-.957 23.307-.281 23.634-14.478.335-14.644-12.332-14.708-22.943-14.312-10.777.402-18.684-4.032-25.845-11.565-10.991-11.561-21.99-23.19-33.87-33.808-10.513-9.4-9.018-16.292.55-25.497 25.204-24.25 49.677-49.261 74.27-74.14zm-209.337-75.967c3.818 3.802 8.394 7.687 13.347 9.321l17.063-17.063c-2.163-6.188-7.316-10.32-11.784-14.798q-72.062-72.226-144.255-144.32c-9.966-9.96-19.873-19.993-30.15-29.63-6.04-5.667-13.213-7.124-19.652-.742-6.13 6.073-5.69 13.22-.859 20.024a66.122 66.122 0 0 0 7.223 8.303q84.46 84.526 169.067 168.905zm-64.009 20.518c9.1 9.076 18.153 18.214 27.585 26.935a17.673 17.673 0 0 0 7.408 4.233l17.85-17.85c-1.172-4.601-4.226-8.242-7.63-11.65q-54.495-54.594-109.11-109.066a33.321 33.321 0 0 0-10.425-7.263c-5.97-2.449-12.126-2.054-16.872 3.173-4.793 5.279-4.73 11.353-1.011 16.908a96.1 96.1 0 0 0 11.722 14.029q40.113 40.402 80.483 80.551z" class="i9_cls-2"/></svg>
+<text x="1160" y="472" font-family="Arial, sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#232F3E">Falco</text>
+<text x="1160" y="486" font-family="Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="middle" fill="#666">runtime detect</text>
+<svg x="1294.0" y="404.0" width="52" height="52" viewBox="16.37 -1.63 395.51 435.76" overflow="visible"><style>svg {enable-background:new 0 0 432 434}</style><path fill="#bfbfbf" d="M71 214.5c7.5-26.7 20.9-50.1 38.4-68.8-5.9-4.4-29.3-22.6-30.4-36.9C77.3 85.4 100.7 6.7 100.7 6.7S30 92.8 25.1 127.6c-3.9 27.3 40.8 81.5 45.5 87v-.1h.4zm287.7-1.4v.2c0 .1.1.2.1.3 7.8-9.4 48.3-59.9 44.6-86-4.9-34.8-75.6-120.9-75.6-120.9s23.4 78.7 21.7 102.1c-1 13.7-22.3 30.8-29.4 36.2 17.5 18.4 31 41.6 38.6 68.1z"/><path fill="#566366" d="M358.7 213.2v-.2c-7.6-26.4-21.1-49.6-38.6-68.1-27.5-29-64.9-46.4-105.2-46.4v93h.1c9.9.1 17.9 8.2 17.9 18.1 0 1.2-.1 2.3-.3 3.4-1.6 8.3-8.8 14.6-17.6 14.7h-.3v34.5l-.2 163.4h3.5s38-55 58.5-70.7c24-18.4 82.2-41.2 82.2-41.2v-99.4l.3-.1c-.1-.2-.1-.5-.2-.7 0-.1 0-.2-.1-.3z"/><path fill="#7d9199" d="M214.7 262.3v-34.5c-8.3-.1-15.2-5.7-17.3-13.3-.4-1.5-.7-3.1-.7-4.8 0-10 8.1-18.1 18.1-18.1h.1V98.9c-40.5 0-78 17.5-105.5 46.8-17.5 18.6-30.9 42.1-38.4 68.8h-.3v100.7s58.2 22.8 82.2 41.2c19.9 15.3 58.3 69.4 58.3 69.4h3.6v-.1h-.2l.1-163.4z"/><path fill="#fff" d="M196.7 209.7c0 1.7.2 3.3.7 4.8 2.1 7.6 9 13.2 17.3 13.3h.3c8.7-.1 16-6.4 17.6-14.7.2-1.1.3-2.2.3-3.4 0-9.9-8-18-17.9-18.1h-.2c-10 0-18.1 8.1-18.1 18.1z"/></svg>
+<text x="1320" y="472" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#232F3E">OPA Gatekeeper</text>
+<text x="1320" y="486" font-family="Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="middle" fill="#666">admission</text>
+<text x="1237" y="560" font-family="Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="middle" fill="#666">5 runtime attacks caught (gator-tested)</text>
+<text x="1237" y="576" font-family="Arial, sans-serif" font-size="9" font-weight="normal" text-anchor="middle" fill="#666">3 admission policies enforced</text>
+<path d="M190,251 L302,251" stroke="#D13212" stroke-width="3" fill="none" stroke-dasharray="9,5" marker-end="url(#mRed)"/>
+<path d="M358,251 L532,251" stroke="#D13212" stroke-width="3" fill="none" stroke-dasharray="9,5" marker-end="url(#mRed)"/>
+<path d="M330,279 L330,429" stroke="#E68A00" stroke-width="2.5" fill="none" marker-end="url(#mAmber)"/>
+<path d="M560,279 L560,340 L360,340 L345,432" stroke="#E68A00" stroke-width="2.5" fill="none" marker-end="url(#mAmber)"/>
+<path d="M190,457 L302,457" stroke="#E68A00" stroke-width="3" fill="none" marker-end="url(#mAmber)"/>
+<path d="M358,457 L532,457" stroke="#E68A00" stroke-width="3" fill="none" marker-end="url(#mAmber)"/>
+<path d="M588,457 L762,457" stroke="#E68A00" stroke-width="3" fill="none" marker-end="url(#mAmber)"/>
+<path d="M330,485 L330,637" stroke="#1D8102" stroke-width="3" fill="none" marker-end="url(#mGreen)"/>
+<path d="M358,665 L532,665" stroke="#1D8102" stroke-width="3" fill="none" marker-end="url(#mGreen)"/>
+<path d="M588,665 L762,665" stroke="#1D8102" stroke-width="3" fill="none" marker-end="url(#mGreen)"/>
+<text x="720.0" y="858" font-family="Arial, sans-serif" font-size="11" font-weight="normal" text-anchor="middle" fill="#666">Terraform (62 resources)  |  Attack: scripted MITRE ATT&amp;CK kill chain  |  Detect: GuardDuty + OpenSearch  |  Respond: EventBridge + Lambda  |  K8s: Falco + OPA</text>
 </svg>
